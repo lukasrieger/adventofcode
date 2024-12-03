@@ -1,0 +1,28 @@
+package com.lukas.solutions
+
+import java.io.File
+import kotlin.math.abs
+
+
+data object Solution1Day1 : Solution {
+    override val date = SolutionDate(Day.Day1, 1)
+    override val description: String = "Solution for AdventOfCode 2024 - Day 1 - Part 1"
+    override fun solve(input: Input): String = Solution1Day1Impl.solve(input.file).toString()
+}
+
+object Solution1Day1Impl {
+    private fun solve(first: List<Int>, second: List<Int>): Int =
+        (first.sorted() zip second.sorted())
+            .sumOf { (a, b) -> abs(a - b) }
+
+    private fun parse(input: File): Pair<List<Int>, List<Int>> =
+        input.readLines().map {
+            it.substringBefore(' ').trim().toInt() to
+                    it.substringAfter(' ').trim().toInt()
+        }.unzip()
+
+    internal fun solve(input: File): Int =
+        parse(input).let { (first, second) ->
+            solve(first, second)
+        }
+}

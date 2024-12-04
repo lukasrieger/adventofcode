@@ -3,11 +3,13 @@ package com.lukas.solutions
 import java.io.File
 
 enum class Day {
-    Day1, Day2, Day3;
+    Day1, Day2, Day3, Day4;
 
     companion object {
         fun fromIntegral(int: Int): Day = entries[int - 1]
     }
+
+    override fun toString(): String = "Day ${this.ordinal + 1}"
 }
 
 data class Input(val file: File, val day: Day) {
@@ -33,11 +35,9 @@ data class SolutionDate(val day: Day, val part: Int) : Comparable<SolutionDate> 
 
 sealed interface Solution {
     val date: SolutionDate
-
-    val description: String
+    val description: String get() = "Solution for AdventOfCode 2024 - ${date.day} - Part ${date.part}"
 
     fun solve(input: Input): String
-
     fun run(input: Input) {
         println("")
         println("Running $description | Result: ${solve(input)}")

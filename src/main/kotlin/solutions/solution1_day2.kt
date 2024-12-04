@@ -10,7 +10,6 @@ import kotlin.collections.sum as intSum
 
 data object Solution1Day2 : Solution {
     override val date = SolutionDate(Day.Day2, 1)
-    override val description: String = "Solution for AdventOfCode 2024 - Day 2 - Part 1"
     override fun solve(input: Input): String = Solution1Day2Impl.solve(input.file, Solution1Day2Impl::solve).toString()
 }
 

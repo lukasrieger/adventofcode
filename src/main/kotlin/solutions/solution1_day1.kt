@@ -6,7 +6,6 @@ import kotlin.math.abs
 
 data object Solution1Day1 : Solution {
     override val date = SolutionDate(Day.Day1, 1)
-    override val description: String = "Solution for AdventOfCode 2024 - Day 1 - Part 1"
     override fun solve(input: Input): String = Solution1Day1Impl.solve(input.file).toString()
 }
 

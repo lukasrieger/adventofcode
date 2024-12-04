@@ -5,7 +5,6 @@ import java.io.File
 
 data object Solution1Day3 : Solution {
     override val date = SolutionDate(Day.Day3, 1)
-    override val description: String = "Solution for AdventOfCode 2024 - Day 3 - Part 1"
     override fun solve(input: Input): String = Solution1Day3Impl.solve(
         input.file, extendedInstructionSet = false
     ).toString()

@@ -5,9 +5,9 @@ import java.io.File
 
 data object Solution1Day3 : Solution {
     override val date = SolutionDate(Day.Day3, 1)
-    override fun solve(input: Input): String = Solution1Day3Impl.solve(
+    override fun solve(input: Input) = Solution1Day3Impl.solve(
         input.file, extendedInstructionSet = false
-    ).toString()
+    )
 }
 
 private sealed interface Instruction {

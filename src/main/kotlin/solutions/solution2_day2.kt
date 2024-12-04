@@ -3,9 +3,9 @@ package com.lukas.solutions
 
 data object Solution2Day2 : Solution {
     override val date = SolutionDate(Day.Day2, 2)
-    override fun solve(input: Input): String = Solution1Day2Impl.solve(input.file) {
+    override fun solve(input: Input) = Solution1Day2Impl.solve(input.file) {
         Solution2Day2Impl.solve(it, Solution1Day2Impl::solve)
-    }.toString()
+    }
 }
 
 private object Solution2Day2Impl {

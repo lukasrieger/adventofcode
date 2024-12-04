@@ -37,7 +37,7 @@ sealed interface Solution {
     val date: SolutionDate
     val description: String get() = "Solution for AdventOfCode 2024 - ${date.day} - Part ${date.part}"
 
-    fun solve(input: Input): String
+    fun solve(input: Input): Any
     fun run(input: Input) {
         println("")
         println("Running $description | Result: ${solve(input)}")

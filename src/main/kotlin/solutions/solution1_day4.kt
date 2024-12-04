@@ -8,13 +8,13 @@ typealias Patterns = List<List<Pair<Int, Int>>>
 
 data object Solution1Day4 : Solution {
     override val date: SolutionDate = SolutionDate(Day.Day4, 1)
-    override fun solve(input: Input): String =
+    override fun solve(input: Input) =
         Solution1Day4Impl.solve(
             matrix = Solution1Day4Impl.parse(input.file),
             marker = 'X',
             patternSelector = Solution1Day4Impl::patterns,
             score = { pat -> pat.count { it == "XMAS" } }
-        ).toString()
+        )
 }
 
 internal object Solution1Day4Impl {
